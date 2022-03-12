@@ -1,0 +1,2 @@
+POINT_START = 100
+MINUS_POINT = frozenset({10, 20})
