@@ -82,6 +82,9 @@ def handle_battle_mover(request: json, the_websocket: str) -> dict:
     ):
         return {"error": "KeyError"}
 
+    if not min(RoundChoices) <= choice <= max(RoundChoices):
+        return {"error": "choice Error"}
+
     user = User.objects.filter(pk=user_id).first()
     if not user:
         return {"error": "userId Error"}
